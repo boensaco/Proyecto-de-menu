@@ -4,7 +4,7 @@ const DB = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'productos_reposteria'
+    database: 'Productos'
 });
 
 module.exports = DB;
