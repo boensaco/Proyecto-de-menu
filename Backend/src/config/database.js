@@ -1,15 +1,10 @@
-const mysql = require('mysql2')
-require('dotenv').config()
+const mysql = require('mysql2/promise');
 
-const pool = mysql.createPool(
-    {
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        port: 3308,
-        database: process.env.DB_NAME,
-        connectionLimit: 10, 
-    }
-)
-const conectionPromise = pool.promise()
-module.exports = conectionPromise
+const DB = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'productos_reposteria'
+});
+
+module.exports = DB;
